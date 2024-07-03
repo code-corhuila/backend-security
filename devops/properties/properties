@@ -8,7 +8,7 @@ server.port= 9000
 spring.jpa.hibernate.ddl-auto = update
 spring.jpa.show-sql=true
 
-spring.datasource.url = jdbc:postgresql://127.0.0.1:5432/db-security
+spring.datasource.url = jdbc:postgresql://serve-postgres:5432/db-security
 
 # spring.datasource.username: specifies the username for the PostgreSQL database connection
 spring.datasource.username = postgres
@@ -21,4 +21,3 @@ jwt.secret = roITo2yN5V8W6RbcVJ0GvjKjFbfNgs2DRirmwdpbBTQ48mSudfltuMGxmUCIjYZOIUe
 jwt.expiration = 3600
 
 # spring.security.user.password = dfc59d41-0640-4bac-b4bd-e4ca891eb870
-

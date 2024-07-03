@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  backend-security:
+    image: ${CONTAINER_IMAGE}
+    container_name: backend-security
+    build: 
+      context: ../
+    ports:  
+    - "9000:9000"
+    networks:
+    - network_local_server
+networks:
+  network_local_server:
+    external: true
