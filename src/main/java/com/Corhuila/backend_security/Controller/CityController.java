@@ -34,7 +34,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("api/parameter/City")
+@RequestMapping("api/parameter/Citysss")
 public class CityController extends BaseModelController<City, ICityService>{
 
 	public CityController(ICityService service) {
