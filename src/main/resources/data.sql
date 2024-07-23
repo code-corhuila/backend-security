@@ -2,8 +2,8 @@
  * INITIAL DATABASE *
  *******************/
 
-DROP DATABASE IF EXISTS "db-security";
-CREATE DATABASE "db-security";
+DROP DATABASE IF EXISTS "db_security";
+CREATE DATABASE "db_security";
 
 DROP SCHEMA IF EXISTS "security";
 CREATE SCHEMA "security";

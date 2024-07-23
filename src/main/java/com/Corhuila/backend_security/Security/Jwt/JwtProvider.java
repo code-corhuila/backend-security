@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,10 +20,6 @@ import com.nimbusds.jwt.JWTParser;
 import com.Corhuila.backend_security.Security.Dto.JwtDto;
 import com.Corhuila.backend_security.Security.Entity.UsuarioPrincipal;
 
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureException;
@@ -44,9 +41,11 @@ public class JwtProvider {
         return Jwts.builder()
                 .setSubject(usuarioPrincipal.getUsername())
                 .claim("roles", roles)
+                .setIssuer("com.corhuila.security")
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + expiration * 180))
-                .signWith(getSecret(secret))
+                .signWith(SignatureAlgorithm.HS256, secret)
+                //.signWith(getSecret(secret))
                 .compact();
     }
 
