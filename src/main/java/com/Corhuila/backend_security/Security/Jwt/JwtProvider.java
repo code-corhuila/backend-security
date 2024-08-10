@@ -44,8 +44,8 @@ public class JwtProvider {
                 .setIssuer("com.corhuila.security")
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + expiration * 180))
-                .signWith(SignatureAlgorithm.HS256, secret)
-                //.signWith(getSecret(secret))
+                //.signWith(SignatureAlgorithm.HS256, secret)
+                .signWith(getSecret(secret))
                 .compact();
     }
 
